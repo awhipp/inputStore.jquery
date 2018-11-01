@@ -1,6 +1,12 @@
 # Cookie Store jQuery Plugin
 A jQuery plugin that allows you to define cookie-stored input fields so that a user's previous information is stored upon input.
 
+## Installation
+
+Just provide the cookieStore.js file after you import jQuery proper.
+
+## Examples and Use
+
 To define a cookie stored input field such as:
 ```
 <input type="text" name="fieldExample" id="example"></input>
