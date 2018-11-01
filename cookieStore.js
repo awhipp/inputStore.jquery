@@ -4,7 +4,7 @@
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         var expires = d.toUTCString();
-        document.cookie = cname + "=" + cvalue + "; expires=" + expires;
+        document.cookie = cname + "=" + cvalue + "; expires=" + expires + "; path=/";
     };
 
     function cookieStoreGet(cname) {
@@ -39,7 +39,7 @@
         }
 
         this.on('keyup', function(){
-          cookieStoreSet(settings.name, this.value, this.expire);
+          cookieStoreSet(settings.name, this.value, settings.expire);
           if(settings.debug) {
             console.log("Previous Input for ["+settings.name+"] = ["+this.value+"]");
           }
