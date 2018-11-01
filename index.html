@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>Cookie Store Example</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="cookieStore.js"></script>
+ </head>
+ <body>
+
+   <h1> Cookie Store jQuery Plugin </h1>
+
+   <p> A jQuery plugin that allows you to define cookie-stored input fields so that a user's previous information is stored upon input. </p>
+
+   <hr>
+   <h3> Example 1 </h3>
+   <p> Default example: below is an input field with the id example1 </p>
+   <code>
+       $("#example1").cookieStore();
+  </code><br><br>
+   <input id="example1" type="text" name="example1field"></input>
+   <br>
+   <p>
+     By default this input field will store the values as cookies when they
+     are entered into the browser for 365 days. The cookie name default's
+     to the input field name. In this case it defaults to example1field.</p>
+   <hr>
+   <br>
+
+    <h3> Example 2 </h3>
+    <p>
+      Configuration example: below is an input field with the id example2
+    </p>
+    <code>
+      $("#example2").cookieStore({<br>
+        name: "CustomOptions",<br>
+        expire: 120,<br>
+        debug: true<br>
+      });<br>
+    </code><br><br>
+    <input id="example2" type="text" name="example2field"></input>
+    <br>
+    <div>
+    <p>
+      This code snippet overrides the current defaults.
+    </p>
+    <ol>
+      <li>It uses the cookie name CustomOptions rather than the input name of example2field.</li>
+      <li>It settings the expiry to 120 days instead of the default 365 days.</li>
+      <li>It enables debug which shows you what the cookie stored value is and the newly stored values are in the javascript console.</li>
+    </ol>
+    </div>
+    <hr>
+
+ </body>
+ <script src="exampleSetup.js"></script>
+</html>
