@@ -2,7 +2,7 @@
    $("#example1").cookieStore();
    $("#example2").cookieStore({
      name: "CustomOptions",
-     expire: 365,
+     expire: 120,
      debug: true
    });
  }

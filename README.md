@@ -20,4 +20,4 @@ If you would like to add custom configuration to the cookie then you can use the
    debug: true
  });
 ```
-This will define the field with the cookie name `CustomConfig` and an expiration of 120 days.
+This will define the field with the cookie name `CustomConfig` and an expiration of 120 days. Further if you enable debug, in the javascript console you will see the the previously stored cookie value and the newly stored values as the user types.
