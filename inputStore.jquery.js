@@ -1,13 +1,13 @@
 (function ( $ ) {
 
-    function cookieStoreSet(cname, cvalue, exdays) {
+    function inputStoreSet(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         var expires = d.toUTCString();
         document.cookie = cname + "=" + cvalue + "; expires=" + expires + "; path=/";
     };
 
-    function cookieStoreGet(cname) {
+    function inputStoreGet(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
         var ca = decodedCookie.split(';');
@@ -23,7 +23,7 @@
         return "";
     };
 
-    $.fn.cookieStore = function( options ) {
+    $.fn.inputStore = function( options ) {
 
         // This is the easiest way to have default options.
         var settings = $.extend({
@@ -32,14 +32,14 @@
             debug: false
         }, options );
 
-        var previousSet = cookieStoreGet(settings.name)
+        var previousSet = inputStoreGet(settings.name)
         this.val(previousSet);
         if(settings.debug) {
           console.log("Previous Input for ["+settings.name+"] = ["+previousSet+"]");
         }
 
         this.on('keyup', function(){
-          cookieStoreSet(settings.name, this.value, settings.expire);
+          inputStoreSet(settings.name, this.value, settings.expire);
           if(settings.debug) {
             console.log("Previous Input for ["+settings.name+"] = ["+this.value+"]");
           }

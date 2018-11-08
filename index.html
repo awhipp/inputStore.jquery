@@ -2,56 +2,111 @@
 <html>
  <head>
    <meta charset="UTF-8">
-   <title>Cookie Store Example</title>
+   <title>Input Store Example</title>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="cookieStore.js"></script>
+  <script src="inputStore.jquery.min.js"></script>
  </head>
  <body>
+  <h1> Input Store jQuery Plugin </h1>
 
-   <h1> Cookie Store jQuery Plugin </h1>
+  <p> A jQuery plugin that allows you to define cookie-stored input fields so that a user's previous information is stored upon input. </p>
 
-   <p> A jQuery plugin that allows you to define cookie-stored input fields so that a user's previous information is stored upon input. </p>
+  <hr>
 
-   <hr>
-   <h3> Example 1 </h3>
-   <p> Default example: below is an input field with the id example1 </p>
+
+  <div class="gettingStarted">
+    <h3> Getting Started </h3>
+    <div>
+      <ol>
+        <li> You can download the full javascript file <a href="inputStore.jquery.js" target="_blank">here</a>
+          or the minified version <a href="inputStore.jquery.min.js" target="_blank">here</a>.</li>
+        <li> You can reference the latest jquery file on this website by using the following script tag:<br>
+          <code>
+            &lt;script src="https://inputstore.netlify.com/inputStore.jquery.min.js"&gt;&lt;/script&gt;
+          </code>
+        </li>
+      </ol>
+    </div>
+
+    <hr>
+  </div>
+
+  <div class="example">
+   <h3> Example 1 - Defaults </h3>
+
+   <p>
+     Given the following HTML input field:
+   </p>
+
    <code>
-       $("#example1").cookieStore();
-  </code><br><br>
-   <input id="example1" type="text" name="example1field"></input>
-   <br>
+     &lt;input id="example1" type="text" name="example1field"&gt;&lt;/input&gt;
+   </code>
+
+   <p>
+     and the following javascript initialization code:
+   </p>
+
+   <code>
+     $("#example1").inputStore();
+   </code>
+
+   <p>
+     You will get the following working example form input:
+   </p>
+
+   <p>
+     <input id="example1" type="text" name="example1field"></input>
+   </p>
    <p>
      By default this input field will store the values as cookies when they
      are entered into the browser for 365 days. The cookie name default's
      to the input field name. In this case it defaults to example1field.</p>
    <hr>
-   <br>
+  </div>
 
-    <h3> Example 2 </h3>
+  <div class="example">
+    <h3> Example 2 - With Configuration</h3>
+
     <p>
-      Configuration example: below is an input field with the id example2
+      Given the following HTML input field:
     </p>
+
     <code>
-      $("#example2").cookieStore({<br>
-        name: "CustomOptions",<br>
-        expire: 120,<br>
-        debug: true<br>
-      });<br>
-    </code><br><br>
-    <input id="example2" type="text" name="example2field"></input>
-    <br>
-    <div>
+      &lt;input id="example2" type="text" name="example2field"&gt;&lt;/input&gt;
+    </code>
+
     <p>
-      This code snippet overrides the current defaults.
+      and the following javascript initialization code:
     </p>
-    <ol>
-      <li>It uses the cookie name CustomOptions rather than the input name of example2field.</li>
-      <li>It settings the expiry to 120 days instead of the default 365 days.</li>
-      <li>It enables debug which shows you what the cookie stored value is and the newly stored values are in the javascript console.</li>
-    </ol>
+
+    <code>
+      $("#example2").inputStore({<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;name: "CustomOptions",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;expire: 120,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;debug: true<br>
+      });<br>
+    </code>
+
+    <p>
+      You will get the following working example form input:
+    </p>
+
+    <p>
+      <input id="example2" type="text" name="example2field"></input>
+    </p>
+
+    <div>
+      <p>
+        This code snippet overrides the current defaults.
+      </p>
+      <ol>
+        <li>It uses the cookie name CustomOptions rather than the input name of example2field.</li>
+        <li>It settings the expiry to 120 days instead of the default 365 days.</li>
+        <li>It enables debug which shows you what the cookie stored value is and the newly stored values are in the javascript console.</li>
+      </ol>
     </div>
     <hr>
-
+  </div>
  </body>
  <script src="exampleSetup.js"></script>
 </html>

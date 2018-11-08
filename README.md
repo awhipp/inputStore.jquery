@@ -1,11 +1,13 @@
-# Cookie Store jQuery Plugin
+# Input Store jQuery Plugin
 A jQuery plugin that allows you to define cookie-stored input fields so that a user's previous information is stored upon input.
 
 ## Installation
 
-Just provide the cookieStore.js file after you import jQuery proper.
+Just provide the inputStore.jquery.min.js file after you import jQuery proper.
 
-## Examples and Use
+## Examples
+
+### Default Usecase
 
 To define a cookie stored input field such as:
 ```
@@ -13,14 +15,17 @@ To define a cookie stored input field such as:
 ```
 It is as simple as:
 ```
- $("#example").cookieStore();
+ $("#example").inputStore();
  ```
 
 This will store the input whenever a user enters information into it. The cookie name will be equal to the input name. In this case it will be `fieldExample`. The cookie will last 365 days by default.
 
+
+### Custom Configuration
+
 If you would like to add custom configuration to the cookie then you can use the following initialization:
 ```
- $("#example").cookieStore({
+ $("#example").inputStore({
    name: "CustomConfig",
    expire: 120,
    debug: true
