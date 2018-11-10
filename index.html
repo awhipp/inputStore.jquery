@@ -6,13 +6,12 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="inputStore.jquery.min.js"></script>
  </head>
- <body>
+ <body style="padding: 1em">
   <h1> Input Store jQuery Plugin </h1>
 
   <p> A jQuery plugin that allows you to define cookie-stored input fields so that a user's previous information is stored upon input. </p>
 
   <hr>
-
 
   <div class="gettingStarted">
     <h3> Getting Started </h3>
@@ -24,6 +23,9 @@
           <code>
             &lt;script src="https://inputstore.netlify.com/inputStore.jquery.min.js"&gt;&lt;/script&gt;
           </code>
+        </li>
+        <li>
+          Requires jQuery proper (2.0+) to operate
         </li>
       </ol>
     </div>
@@ -104,6 +106,65 @@
         <li>It settings the expiry to 120 days instead of the default 365 days.</li>
         <li>It enables debug which shows you what the cookie stored value is and the newly stored values are in the javascript console.</li>
       </ol>
+    </div>
+    <hr>
+
+    <div class="allUses">
+      <h3> All Form Block Examples </h3>
+      <div>
+        <p><strong> 1. Text Input Blocks </strong></p>
+        <div>
+          <input id="inputBlock" type="text" name="inputBlock"></input><br>
+          <code>
+            &lt;input id="inputBlock" type="text" name="inputBlock"&gt;&lt;/input&gt;<br>
+            $("#inputBlock").inputStore();
+          </code><br>
+        </div>
+      </div>
+
+      <div>
+        <p><strong> 2. Number Input Blocks </strong></p>
+        <input id="numberBlock" type="number" name="numberBlock"></input><br>
+        <code>
+          &lt;input id="numberBlock" type="number" name="numberBlock"&gt;&lt;/input&gt;<br>
+          $("#numberBlock").inputStore();
+        </code><br>
+      </div>
+
+      <div>
+        <p><strong> 3. Check Box Blocks </strong></p>
+        <input id="checkboxBlock" type="checkbox" name="checkboxBlock"></input><br>
+        <code>
+          &lt;input id="checkboxBlock" type="checkbox" name="checkboxBlock"&gt;&lt;/input&gt;<br>
+          $("#checkboxBlock").inputStore();
+        </code><br>
+      </div>
+
+      <div>
+        <p><strong> 4. Select Blocks </strong></p>
+        <select id="selectBlock" name="selectBlock">
+          <option value="OptionA">Option A</option>
+          <option value="OptionB">Option B</option>
+          <option value="OptionC">Option C</option>
+        </select><br>
+        <code>
+          &lt;select id="selectBlock" name="selectBlock"&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="OptionA"&gt;Option A&lt;/option&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="OptionB"&gt;Option B&lt;/option&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="OptionC"&gt;Option C&lt;/option&gt;<br>
+          &lt;/select&gt;<br>
+          $("#selectBlock").inputStore();
+        </code><br>
+      </div>
+
+      <div>
+        <p><strong> 5. Text Area Blocks </strong></p>
+        <textarea id="textareaBlock" name="textareaBlock"></textarea> <br>
+        <code>
+          &lt;textarea id="textareaBlock" name="textareaBlock"&gt;&lt;/textarea&gt;<br>
+          $("#textareaBlock").inputStore();
+        </code><br><br>
+      </div>
     </div>
     <hr>
   </div>

@@ -23,6 +23,20 @@
         return "";
     };
 
+    function store(settings, type, dom) {
+        if(type === "checkbox") {
+          inputStoreSet(settings.name, $(dom).prop('checked'), settings.expire);
+          if(settings.debug) {
+            console.log("Previous Input for ["+settings.name+"] = ["+$(dom).prop('checked')+"]");
+          }
+        } else {
+          inputStoreSet(settings.name, dom.value, settings.expire);
+          if(settings.debug) {
+            console.log("Previous Input for ["+settings.name+"] = ["+dom.value+"]");
+          }
+        }
+    }
+
     $.fn.inputStore = function( options ) {
 
         // This is the easiest way to have default options.
@@ -32,17 +46,26 @@
             debug: false
         }, options );
 
-        var previousSet = inputStoreGet(settings.name)
-        this.val(previousSet);
+        var previousSet = inputStoreGet(settings.name);
+
+        var type = this.attr("type") || this[0].nodeName;
+        if(type && type == "checkbox" && previousSet == "true"){
+          this.prop('checked', previousSet);
+        } else {
+          this.val(previousSet);
+        }
+
         if(settings.debug) {
           console.log("Previous Input for ["+settings.name+"] = ["+previousSet+"]");
         }
 
+
         this.on('keyup', function(){
-          inputStoreSet(settings.name, this.value, settings.expire);
-          if(settings.debug) {
-            console.log("Previous Input for ["+settings.name+"] = ["+this.value+"]");
-          }
+          store(settings, type, this);
+        });
+
+        this.on('change', function(){
+          store(settings, type, this);
         });
 
         return this;

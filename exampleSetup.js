@@ -5,4 +5,10 @@
      expire: 120,
      debug: true
    });
+
+   $("#inputBlock").inputStore();
+   $("#numberBlock").inputStore();
+   $("#checkboxBlock").inputStore();
+   $("#selectBlock").inputStore();
+   $("#textareaBlock").inputStore();
  }

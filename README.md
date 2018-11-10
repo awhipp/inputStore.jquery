@@ -3,7 +3,18 @@ A jQuery plugin that allows you to define cookie-stored input fields so that a u
 
 ## Installation
 
-Just provide the inputStore.jquery.min.js file after you import jQuery proper.
+Just provide the inputStore.jquery.min.js file after you import jQuery (2.0+) proper.
+
+## Compatible Form types
+
+Confirmed to work with the following form block types:
+* text input blocks
+* number input blocks
+* checkbox input blocks
+* select blocks
+* textarea blocks
+
+For working examples visit: https://inputstore.netlify.com/
 
 ## Examples
 
